@@ -1,0 +1,65 @@
+.footer {
+  z-index: 3;
+    position: relative;
+    width: 100%;
+    min-height: 1rem;
+    line-height: 1rem;
+    text-align: center;
+    color: #ffffff;
+    background: #043056;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    font-size: 0.75rem; }
+  @media screen and (max-width: 768px) {
+    .footer {
+      position: relative; } }
+  
+  .c-action__gototop {
+    position: fixed;
+    bottom: 0.875rem;
+    right: 0.875rem;
+    display: block;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: #5c7aa0;
+    border: none;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    margin: 0;
+    opacity: 0;
+    -webkit-transform: translateY(200%);
+    -moz-transform: translateY(200%);
+    transform: translateY(200%);
+    pointer-events: none;
+    padding: 0;
+    z-index: 69;
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    transition: all 0.4s ease; }
+  .c-action__gototop:before {
+    display: block;
+    width: 100%;
+    line-height: 2.375rem;
+    font-family: FontAwesome;
+    content: '\EA04';
+    color: #ffffff;
+    text-align: center; }
+  .c-action__gototop.is-visible {
+    opacity: .6;
+    pointer-events: auto;
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    transform: translateY(0); }
+  .c-action__gototop:hover, .c-action__gototop:focus, .c-action__gototop:active {
+    opacity: 1;
+    background: #17365d; }
+  
+  .footer {
+    display: flex;
+    align-items: normal;
+    align-content: space-around;
+    justify-content: space-evenly;
+  }
+  

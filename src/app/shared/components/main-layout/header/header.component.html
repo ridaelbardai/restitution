@@ -1,0 +1,47 @@
+<div class="header-root">
+  <div class="head">
+    <div class="utils-links">
+      <ul>
+        <li>
+          <a translate>header.home</a>
+        </li>
+        <li>
+          <a (click)="switchLanguage(oppositeLang)">{{ buttonText }}</a>
+        </li>
+        <li>
+          <a translate>header.contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="header--content">
+    <div class="header-content-start">
+      <div class="logo">
+        <a
+          ><img src="assets/images/logo-dgi.png" class="dgi-logo" alt="DGI"
+        /></a>
+      </div>
+      <div class="slogan">
+        <span class="slog-brand" translate>header.title</span
+        ><span class="title" translate>header.for_credit</span>
+      </div>
+    </div>
+    <div class="spacer"></div>
+    <div class="header-content-end">
+      <div class="connected--user">
+        <div class="connected-infos">
+          <span translate>header.welcoming</span>
+        </div>
+        <div class="cta-logout">
+          <a
+            ><span translate
+              >header.disconnect<i
+                class="fa fa-power-off"
+                aria-hidden="true"
+              ></i> </span
+          ></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

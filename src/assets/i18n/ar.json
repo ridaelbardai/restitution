@@ -1,0 +1,19 @@
+{
+  "header": {
+    "contact": "اتصال",
+    "home": "الاستقبال",
+    "title": "استرجاع الضريبة على الدخل",
+    "for_credit": "الضريبة المتعلقة بالسكن الرئيسي",
+    "welcoming": "مرحبًا رضا",
+    "disconnect": "تسجيل الخروج",
+    "switch_to_arabic": "Arabe",
+    "switch_to_french": "Français"
+  },
+  "nav-menu": {
+    "menu": "القائمة",
+    "Habitation-principale":"الضريبة المتعلقة بالسكن الرئيسي",
+    "retraite-complementaire":"الضريبة المتعلقة بعقود أو مساهمات التقاعد التكميلي",
+    "creer-demande":"وضع طلب",
+    "suivi":"متابعة /البحث"
+  }
+}

@@ -1,0 +1,292 @@
+.header-root .slogan {
+  color: #17365d;
+  font-size: 0.9375rem;
+}
+.header-root .slogan h1 {
+  margin: 0;
+  font-weight: normal;
+}
+
+.header-root {
+  min-height: 8.75rem;
+  position: relative;
+}
+.header-root .sticky-wrapper {
+  border-top: 1px solid #c6d9e7;
+}
+@media screen and (max-width: 768px) {
+  .header-root {
+    min-height: inherit;
+  }
+}
+.header-root .head {
+  min-height: 1.875rem;
+  line-height: 1.875rem;
+  background: #c6d9e7;
+  padding: 0 1.5625rem;
+}
+@media screen and (max-width: 768px) {
+  .header-root .head {
+    padding: 0 0.625rem;
+  }
+}
+.header-root .head .date-now {
+  font-size: 0.75rem;
+  color: #17365d;
+  float: left;
+  padding-left: 8.4375rem;
+}
+@media screen and (max-width: 768px) {
+  .header-root .head .date-now {
+    font-size: 0.6875rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .header-root .head .date-now {
+    padding-left: 0rem;
+  }
+}
+.header-root .head .utils-links {
+  display: flex;
+  justify-content: flex-end;
+}
+.header-root .head .utils-links ul {
+  padding: 0;
+  margin: 0;
+}
+.header-root .head .utils-links ul li {
+  display: inline-block;
+  list-style: none;
+  font-size: 0.75rem;
+}
+@media screen and (max-width: 768px) {
+  .header-root .head .utils-links ul li {
+    font-size: 0.6875rem;
+  }
+}
+.header-root .head .utils-links ul li:after {
+  content: "|";
+  display: inline-block;
+  color: #17365d;
+  padding: 0 0.9375rem;
+}
+@media screen and (max-width: 768px) {
+  .header-root .head .utils-links ul li:after {
+    padding: 0 0.3125rem;
+  }
+}
+.header-root .head .utils-links ul li:last-child:after {
+  display: none;
+}
+.header-root .head .utils-links ul li a {
+  color: #17365d;
+  cursor: pointer;
+}
+.header-root .header--content {
+  position: relative;
+  background: #17365d;
+  padding: 0 1.5625rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.header-content-end{
+  display: flex;
+  align-items: start;
+  margin-inline-start: auto;
+}
+
+.header-content-start{
+  display: flex;
+  align-items: start;
+  width: -webkit-fill-available;
+}
+@media screen and (max-width: 768px) {
+  .header-root .header--content {
+    padding: 0;
+  }
+}
+.header-root .header--content:after {
+  content: "";
+  clear: both;
+}
+.header-root .header--content .logo {
+  position: relative;
+  max-width: 9.375rem;
+  z-index: 0;
+}
+@media screen and (max-width: 768px) {
+  .header-root .header--content .logo {
+    padding: 0.625rem;
+  }
+}
+
+.header-root .header--content .logo:dir(ltr):after {
+  content: "";
+  position: absolute;
+  width: 16.375rem;
+  height: 16.375rem;
+  background: #ffffff;
+  left: -119px;
+  top: -67px;
+  border-radius: 10px;
+
+  -webkit-transform: rotateZ(-135deg);
+  -moz-transform: rotateZ(-135deg);
+  transform: rotateZ(-135deg);
+}
+
+ .header-root .header--content .logo:dir(rtl):after {
+  content: "";
+  position: absolute;
+  width: 16.375rem;
+  height: 16.375rem;
+  background: #ffffff;
+  left: 0px;
+  top: -67px;
+  border-radius: 10px;
+
+  -webkit-transform: rotateZ(-135deg);
+  -moz-transform: rotateZ(-135deg);
+  transform: rotateZ(-135deg);
+}
+
+@media screen and (max-width: 768px) {
+  .header-root .header--content .logo:before {
+    width: 100%;
+    height: 100%;
+    left: 0rem;
+    top: 0px;
+    display: none;
+  }
+}
+.header-root .header--content .logo a {
+  position: relative;
+  z-index: 1;
+  top: -15px;
+}
+@media screen and (max-width: 768px) {
+  .header-root .header--content .logo a {
+    top: 0px;
+  }
+}
+.header-root .header--content .slogan {
+  display: inline-block;
+  font-size: 1.875rem;
+  color: #ffffff;
+  padding-top: 20px;
+  margin-inline-start: 5rem;
+    width: max-content;
+}
+@media screen and (max-width: 768px) {
+  .header-root .header--content .slogan {
+    padding-left: 0px;
+    display: block;
+    text-align: center;
+    padding: 3.125rem 0.9375rem 0;
+    clear: both;
+    background: #fff;
+    border-top: 1px solid #17365d;
+    display: none;
+  }
+}
+.header-root .header--content .slogan span {
+  color: #c6d9e7;
+}
+@media screen and (max-width: 768px) {
+  .header-root .header--content .slogan span {
+    color: #17365d;
+  }
+}
+.header-root .header--content .slogan span.slog-brand {
+  color: #ffffff;
+}
+@media screen and (max-width: 768px) {
+  .header-root .header--content .slogan span.slog-brand {
+    color: #17365d;
+  }
+}
+.header-root .header--content .slogan span.slog-brand span {
+  padding-left: 0.625rem;
+  color: #ffffff;
+}
+@media screen and (max-width: 768px) {
+  .header-root .header--content .slogan span.slog-brand span {
+    color: #17365d;
+  }
+}
+.header-root .header--content .slogan span.title {
+  display: block;
+  color: #c6d9e7;
+  font-size: 2.1875rem;
+  text-align: start; 
+}
+@media screen and (max-width: 768px) {
+  .header-root .header--content .slogan span.title {
+    color: #17365d;
+  }
+}
+.header-root .header--content .connected--user {
+  position: inherit;
+}
+@media screen and (max-width: 768px) {
+  .header-root .header--content .connected--user {
+    top: 0rem;
+    -webkit-transform: translateY(0%);
+    -moz-transform: translateY(0%);
+    transform: translateY(0%);
+    position: inherit;
+    float: left;
+    right: 0;
+    padding-left: 1.25rem;
+    padding-top: 1.25rem;
+  }
+}
+.header-root .header--content .connected--user .connected-infos span {
+  display: block;
+  color: #ffffff;
+  font-size: 1.125rem;
+  white-space: nowrap;           /* Prevent text wrapping */
+  overflow: hidden;              /* Hide overflowing text */
+  text-overflow: ellipsis;  
+}
+@media screen and (max-width: 768px) {
+  .header-root .header--content .connected--user .connected-infos span {
+    font-size: 0.9375rem;
+  }
+}
+.header-root .header--content .connected--user .cta-logout {
+  padding-top: 1.25rem;
+  white-space: nowrap;           /* Prevent text wrapping */
+  overflow: hidden;              /* Hide overflowing text */
+  text-overflow: ellipsis;  
+}
+.header-root .header--content .connected--user .cta-logout a {
+  color: #c6d9e7;
+  font-size: 1.125rem;
+}
+@media screen and (max-width: 768px) {
+  .header-root .header--content .connected--user .cta-logout a {
+    font-size: 0.9375rem;
+  }
+}
+.header-root .header--content .connected--user .cta-logout a:hover {
+  color: #ffffff;
+}
+.header-root .header--content .connected--user .cta-logout span i {
+  color: #ffffff;
+  display: inline-block;
+  vertical-align: middle;
+  margin-inline: 0.625rem;
+}
+
+
+.dgi-logo{
+  max-width: 100%
+}
+
+.spacer{
+  width: -webkit-fill-available
+}

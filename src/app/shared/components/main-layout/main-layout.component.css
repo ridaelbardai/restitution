@@ -1,0 +1,31 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensures the layout takes up at least the full viewport height */
+}
+
+
+.main-content {
+  display: inline-block;
+  z-index: 0;
+  flex-grow: 1; /* This makes the content area take up the remaining space */
+  border-top:  2px solid #63b8f146;
+  margin-top: 5rem;
+  background: rgb(255, 255, 255);
+  background: -moz-linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(212, 214, 226, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(212, 214, 226, 1) 100%
+  );
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(212, 214, 226, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#d4d6e2",GradientType=1);
+}

@@ -1,0 +1,19 @@
+{
+  "header": {
+    "contact": "Contact",
+    "home": "َAccueil",
+    "title": "Restituion IR",
+    "for_credit": "Afférent au crédit logement",
+    "welcoming": "Bienvenu Rida",
+    "disconnect": "Se Déconnecter",
+    "switch_to_arabic": "العربية",
+    "switch_to_french": "الفرنسية"
+  },
+  "nav-menu": {
+    "menu": "MENU",
+    "Habitation-principale":"IR afférent à l'habitation principale",
+    "retraite-complementaire":"Primes ou cotisations se rapportant aux contrats de retraite complémentaire",
+    "creer-demande":"Faire une demande",
+    "suivi":"suivi / recherche"
+  }
+}
