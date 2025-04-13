@@ -3,7 +3,7 @@
     <div class="utils-links">
       <ul>
         <li>
-          <a translate>header.home</a>
+          <a [routerLink]="['login']" translate>header.home</a>
         </li>
         <li>
           <a (click)="switchLanguage(oppositeLang)">{{ buttonText }}</a>

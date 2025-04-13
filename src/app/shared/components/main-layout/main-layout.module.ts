@@ -6,6 +6,7 @@ import { MainLayoutComponent } from './main-layout.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 
 import { TranslateModule } from '@ngx-translate/core';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { TranslateModule } from '@ngx-translate/core';
   ],
   imports: [
     CommonModule,
-    TranslateModule
+    TranslateModule,
+    RouterModule
   ],
   exports: [MainLayoutComponent]  
 })

@@ -1,13 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { Subscription } from 'rxjs';
+import { AuthService } from 'src/app/core/services/auth.service';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
 })
-export class HeaderComponent implements OnInit {
-  constructor(private translate: TranslateService) {}
+export class HeaderComponent implements OnInit, OnDestroy {
+  isLoggedIn: boolean = false;
+  private authSub!: Subscription;
+
+  constructor(
+    private translate: TranslateService,
+    private authService: AuthService
+  ) {}
 
   ngOnInit(): void {
     // Retrieve language and direction from localStorage or default to French (fr)
@@ -19,6 +27,15 @@ export class HeaderComponent implements OnInit {
       // Set the direction attribute after language change is complete
       this.setDirection(savedDir);
     });
+
+    //to track if user is logged in
+    this.authSub = this.authService.isLoggedIn$.subscribe((status) => {
+      this.isLoggedIn = status;
+    });
+  }
+
+  ngOnDestroy(): void {
+    this.authSub.unsubscribe();
   }
 
   // Function to switch language and update direction

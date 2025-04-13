@@ -14,7 +14,6 @@ export class NavMenuComponent implements OnInit {
   ngOnInit(): void {
     $('body').addClass('nav_is_viewed');
     $('side-nav-menu').addClass('nav_is_viewed');
-    $('.js-open-menu').addClass('nav_is_viewed');
     if ($('.js-open-menu').hasClass('nav_is_viewed')) {
       $(document).bind('click', function () {
         $('.js-open-menu').removeClass('nav_is_viewed');
