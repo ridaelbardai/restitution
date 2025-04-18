@@ -3,7 +3,7 @@
     <div class="utils-links">
       <ul>
         <li>
-          <a [routerLink]="['login']" translate>header.home</a>
+          <a [routerLink]="['home']" translate>header.home</a>
         </li>
         <li>
           <a (click)="switchLanguage(oppositeLang)">{{ buttonText }}</a>
@@ -28,13 +28,13 @@
     </div>
     <div class="spacer"></div>
     <div class="header-content-end">
-      <div class="connected--user">
+      <div *ngIf="isLoggedIn" class="connected--user">
         <div class="connected-infos">
-          <span translate>header.welcoming</span>
+          <span>{{ fullName }}</span>
         </div>
         <div class="cta-logout">
           <a
-            ><span translate
+            ><span (click)="logout()" translate
               >header.disconnect<i
                 class="fa fa-power-off"
                 aria-hidden="true"
@@ -43,5 +43,13 @@
         </div>
       </div>
     </div>
+  </div>
+</div>
+<div *ngIf="isLoggedIn" class="menu-button">
+  <div class="js-open-menu cta-menu" (click)="toggleMenu()">
+    <div class="c-nav__icon">
+      <div><span></span><span></span><span></span></div>
+    </div>
+    <span translate>nav-menu.menu</span>
   </div>
 </div>

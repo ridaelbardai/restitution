@@ -1,0 +1,8 @@
+<div class="error-backdrop" *ngIf="visible">
+    <div class="error-modal">
+      <h2>Error</h2>
+      <p>{{ message }}</p>
+      <button (click)="onClose()">Close</button>
+    </div>
+  </div>
+  

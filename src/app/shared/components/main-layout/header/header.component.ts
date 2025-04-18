@@ -1,7 +1,8 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
 import { AuthService } from 'src/app/core/services/auth.service';
+import { MenuToggleService } from 'src/app/core/services/menu.service';
 
 @Component({
   selector: 'app-header',
@@ -11,10 +12,12 @@ import { AuthService } from 'src/app/core/services/auth.service';
 export class HeaderComponent implements OnInit, OnDestroy {
   isLoggedIn: boolean = false;
   private authSub!: Subscription;
+  menuOpen = false;
 
   constructor(
     private translate: TranslateService,
-    private authService: AuthService
+    private authService: AuthService,
+    private menuToggleService: MenuToggleService 
   ) {}
 
   ngOnInit(): void {
@@ -36,6 +39,10 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.authSub.unsubscribe();
+  }
+
+  logout() {
+    this.authService.logout();
   }
 
   // Function to switch language and update direction
@@ -73,5 +80,31 @@ export class HeaderComponent implements OnInit, OnDestroy {
         ? 'header.switch_to_arabic'
         : 'header.switch_to_french'
     );
+  }
+
+  get fullName(): string {
+    return this.translate.instant('header.welcoming') + localStorage.getItem('fullname');
+  }
+
+  toggleMenu() {
+    this.menuOpen = !this.menuOpen;
+    this.menuToggleService.emitToggle();
+  }
+
+  closeMenu() {
+    this.menuOpen = false;
+  }
+
+  @HostListener('document:click', ['$event'])
+  handleOutsideClick(event: Event) {
+    const target = event.target as HTMLElement;
+
+    if (this.menuOpen && target.classList.contains('overlay')) {
+      this.closeMenu();
+    }
+
+    // if (target.classList.contains('Déclarations')) {
+    //   target.classList.add('opened');
+    // }
   }
 }

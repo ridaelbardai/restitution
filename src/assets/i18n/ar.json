@@ -4,16 +4,63 @@
     "home": "الاستقبال",
     "title": "استرجاع الضريبة على الدخل",
     "for_credit": "الضريبة المتعلقة بالسكن الرئيسي",
-    "welcoming": "مرحبًا رضا",
+    "welcoming": "مرحبًا ",
     "disconnect": "تسجيل الخروج",
     "switch_to_arabic": "Arabe",
     "switch_to_french": "Français"
   },
   "nav-menu": {
     "menu": "القائمة",
-    "Habitation-principale":"الضريبة المتعلقة بالسكن الرئيسي",
-    "retraite-complementaire":"الضريبة المتعلقة بعقود أو مساهمات التقاعد التكميلي",
-    "creer-demande":"وضع طلب",
-    "suivi":"متابعة /البحث"
+    "Habitation-principale": "الضريبة المتعلقة بالسكن الرئيسي",
+    "retraite-complementaire": "الضريبة المتعلقة بعقود أو مساهمات التقاعد التكميلي",
+    "creer-demande": "وضع طلب",
+    "suivi": "متابعة /البحث"
+  },
+  "login": {
+    "space-title": "فضاء المنخرطين",
+    "welcome-to-your-space": "مرحبا بكم في فضاء المنخرطين",
+    "of-dgi": "للمديرية العامة للضرائب",
+    "connection": "تسجيل الدخول"
+  },
+  "footer": {
+    "conditions": "شروط الاستخدام العامة",
+    "version": "الإصدار 1.0",
+    "copyright": "حقوق النشر © 2025 DGI"
+  },
+  "home":{
+    "identification":"التعريف",
+    "idAdherent": "معرف المنخرط",
+    "cin": "رقم البطاقة الوطنية",
+    "cnss": "رقم CNSS",
+    "telephone": "الهاتف",
+    "identifiantFiscal": "المعرف الجبائي",
+    "raisonSociale": "الاسم التجاري",
+    "activite": "النشاط",
+    "adresse": "العنوان",
+    "numRegistreCommerce": "رقم السجل التجاري",
+    "ville": "المدينة",
+    "formeJuridique": "الشكل القانوني",
+    "dateCreation": "تاريخ الإنشاء",
+    "patente": "رخصة",
+    "codeVille": "رمز المدينة",
+    "libelleVille": "اسم المدينة",
+    "codeProfession": "رمز المهنة",
+    "libelleProfession": "اسم المهنة",
+    "direction": "المديرية",
+    "subdivision": "الفرع",
+    "secteur": "القطاع",
+    "representantLegal": "الممثل القانوني",
+    "ice": "رقم ICE",
+    "directionCode": "رمز المديرية",
+    "codeRaf": "رمز RAF",
+    "isAgent": "هل هو موظف",
+    "regimeAssurance": "نظام التأمين",
+    "codeTypeImpot": "رمز نوع الضريبة",
+    "codeOptionImpot": "رمز خيار الضريبة",
+    "dateAdhesionRegime": "تاريخ الانخراط في النظام",
+    "nom": "الاسم",
+    "prenom": "النسب",
+    "hasCertificat": "يتوفر على شهادة"
   }
+  
 }

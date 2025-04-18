@@ -1,1 +1,42 @@
-<p>login works!</p>
+<div class="login">
+  <div class="login-page">
+    <div class="title">
+      <span translate>login.space-title</span>
+    </div>
+    <div class="login-form">
+      <div class="login-text">
+        <span class="login-text-1" translate>login.welcome-to-your-space</span>
+        <span class="login-text-2">
+          <strong translate>login.of-dgi</strong></span
+        >
+      </div>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <input
+            class="username"
+            id="username"
+            type="text"
+            formControlName="username"
+            placeholder="Nom d'utilisateur"
+          />
+          
+        </div>
+
+        <div class="form-group">
+          <input
+            class="password"
+            id="password"
+            type="password"
+            formControlName="password"
+            placeholder="Mot de passe"
+          />
+          
+        </div>
+
+        <button type="submit" [disabled]="loginForm.invalid"><strong translate>login.connection</strong></button>
+
+        <div *ngIf="errorMessage" class="">{{ errorMessage }}</div>
+      </form>
+    </div>
+  </div>
+</div>

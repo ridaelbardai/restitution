@@ -2,18 +2,65 @@
   "header": {
     "contact": "Contact",
     "home": "َAccueil",
-    "title": "Restituion IR",
+    "title": "Restitution IR",
     "for_credit": "Afférent au crédit logement",
-    "welcoming": "Bienvenu Rida",
+    "welcoming": "Bienvenu ",
     "disconnect": "Se Déconnecter",
     "switch_to_arabic": "العربية",
     "switch_to_french": "الفرنسية"
   },
   "nav-menu": {
     "menu": "MENU",
-    "Habitation-principale":"IR afférent à l'habitation principale",
-    "retraite-complementaire":"Primes ou cotisations se rapportant aux contrats de retraite complémentaire",
-    "creer-demande":"Faire une demande",
-    "suivi":"suivi / recherche"
+    "Habitation-principale": "IR afférent à l'habitation principale",
+    "retraite-complementaire": "Primes ou cotisations se rapportant aux contrats de retraite complémentaire",
+    "creer-demande": "Faire une demande",
+    "suivi": "suivi / recherche"
+  },
+  "login": {
+    "space-title": "Espace adhérent",
+    "welcome-to-your-space": "Bienvenu sur l'espace adhérent",
+    "of-dgi": "de la Direction Générale des Impôts",
+    "connection": "Connexion"
+  },
+  "footer": {
+    "conditions": "Conditions Générales d'Utilisation",
+    "version": "Version 1.0",
+    "copyright": "DGI Copyright 2025"
+  },
+  "home":{
+    "identification":"Identification",
+    "idAdherent": "Identifiant Adhérent",
+    "cin": "CIN",
+    "cnss": "CNSS",
+    "telephone": "Téléphone",
+    "identifiantFiscal": "Identifiant Fiscal",
+    "raisonSociale": "Raison Sociale",
+    "activite": "Activité",
+    "adresse": "Adresse",
+    "numRegistreCommerce": "Numéro du Registre de Commerce",
+    "ville": "Ville",
+    "formeJuridique": "Forme Juridique",
+    "dateCreation": "Date de Création",
+    "patente": "Patente",
+    "codeVille": "Code Ville",
+    "libelleVille": "Libellé Ville",
+    "codeProfession": "Code Profession",
+    "libelleProfession": "Libellé Profession",
+    "direction": "Direction",
+    "subdivision": "Subdivision",
+    "secteur": "Secteur",
+    "representantLegal": "Représentant Légal",
+    "ice": "ICE",
+    "directionCode": "Code Direction",
+    "codeRaf": "Code RAF",
+    "isAgent": "Est un Agent",
+    "regimeAssurance": "Régime d’Assurance",
+    "codeTypeImpot": "Code Type d’Impôt",
+    "codeOptionImpot": "Code Option d’Impôt",
+    "dateAdhesionRegime": "Date d’Adhésion au Régime",
+    "nom": "Nom",
+    "prenom": "Prénom",
+    "hasCertificat": "Possède un Certificat"
   }
+  
 }

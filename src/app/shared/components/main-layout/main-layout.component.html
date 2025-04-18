@@ -1,6 +1,16 @@
 <app-header></app-header>
-<nav-menu></nav-menu>
-<div class="main-content">
-  <router-outlet></router-outlet>
+
+<nav-menu *ngIf="isLoggedIn"></nav-menu>
+<div class="main-content container">
+  <app-loading-spinner></app-loading-spinner>
+  <div [@routeAnimations]="prepareRoute(o)">
+    <router-outlet #o="outlet"></router-outlet>
+    <app-error-modal
+      [visible]="errorVisible"
+      [message]="errorMessage"
+      [onClose]="closeErrorModal"
+    >
+    </app-error-modal>
+  </div>
 </div>
 <app-footer></app-footer>

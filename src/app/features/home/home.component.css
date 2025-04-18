@@ -1,0 +1,98 @@
+.card {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 2rem;
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+  transition: box-shadow 0.3s;
+}
+
+.card:hover {
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+}
+
+.card-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  font-family: "calibri";
+  color: #17365d;
+  border-bottom: 2px solid #63b8f146;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+
+/* Form layout */
+.form-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+/* Responsive columns */
+.form-group.one-col > .form-control {
+  flex: 1 1 100%;
+}
+.form-group.two-col > .form-control {
+  flex: 1 1 calc(50% - 0.6rem);
+}
+.form-group.three-col > .form-control {
+  flex: 1 1 calc(33.33% - 0.8rem);
+}
+/* Minimalistic Form Control */
+.form-control {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem 0;
+  flex: 1;
+  min-width: 0;
+}
+
+/* Label */
+.form-control label {
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: "calibri";
+  color: #333;
+  margin-bottom: 0.25rem;
+}
+
+/* Static Value Display */
+.form-control div {
+  font-size: 0.95rem;
+  color: #222;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Inputs, Selects, Textareas */
+.form-control input,
+.form-control select,
+.form-control textarea {
+  padding: 0.5rem 0;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  font-size: 0.95rem;
+  background-color: transparent;
+  transition: border-color 0.2s;
+}
+
+.form-control input:focus,
+.form-control select:focus,
+.form-control textarea:focus {
+  border-bottom: 1px solid #000;
+  outline: none;
+}
+
+/* Responsive Stack */
+@media screen and (max-width: 992px) {
+  .form-group.three-col > .form-control,
+  .form-group.two-col > .form-control {
+    flex: 1 1 100%;
+  }
+}

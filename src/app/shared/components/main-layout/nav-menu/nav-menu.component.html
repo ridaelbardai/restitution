@@ -1,36 +1,33 @@
 <section class="side-nav">
-  <div class="menu-button" (click)="toggleMenu()">
-    <div class="js-open-menu cta-menu">
-      <div class="c-nav__icon">
-        <div><span></span><span></span><span></span></div>
-      </div>
-      <span translate>nav-menu.menu</span>
-    </div>
-  </div>
+
 
   <nav
     class="side-nav-menu"
     [class.open]="menuOpen"
     [class.nav_is_viewed]="menuOpen"
   >
+  <!-- <div class="top-spacer">
+
+  </div> -->
+
     <ul>
       <li class="Déclarations" value="1">
         <a translate>nav-menu.Habitation-principale</a>
-        <ul>
+        <!-- <ul>
           <li><a translate>nav-menu.creer-demande</a></li>
           <li><a translate>nav-menu.suivi</a></li>
-        </ul>
+        </ul> -->
       </li>
       <li class="Déclarations">
         <a href="#" translate>nav-menu.retraite-complementaire</a>
-        <ul>
+        <!-- <ul>
           <li><a translate>nav-menu.creer-demande</a></li>
           <li><a translate>nav-menu.suivi</a></li>
-        </ul>
+        </ul> -->
       </li>
       <li class="Déclarations"><a href="#" translate>nav-menu.suivi</a></li>
     </ul>
     <span class="spacing"></span>
   </nav>
+  <div class="overlay" *ngIf="menuOpen" (click)="closeMenu()"></div>
 </section>
-<div class="overlay" *ngIf="menuOpen" (click)="closeMenu()"></div>

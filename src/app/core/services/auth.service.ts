@@ -1,39 +1,48 @@
-import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { TokenStorageService } from './token-storage.service';
-import { tap, map } from 'rxjs/operators';
 import { jwtDecode } from 'jwt-decode';
 import { TokenPayload } from './../models/TokenPayload';
+import { Router } from '@angular/router';
+import { AxiosService } from './axios.service';
+import { environment } from 'src/environments/environment';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
-  private authUrl = 'https://your.api/auth';
+  private authUrl = environment.apiUrl;
+
   private isLoggedInSubject = new BehaviorSubject<boolean>(
     this.hasValidToken()
   );
   isLoggedIn$ = this.isLoggedInSubject.asObservable();
 
   constructor(
-    private http: HttpClient,
-    private tokenStorage: TokenStorageService
+    private tokenStorage: TokenStorageService,
+    private router: Router,
+    private axiosService: AxiosService
   ) {}
 
-  login(credentials: { email: string; password: string }): Observable<void> {
-    return this.http
-      .post<{ token: string }>(`${this.authUrl}/login`, credentials)
-      .pipe(
-        tap((res: { token: string }) => {
-          this.tokenStorage.saveToken(res.token);
-          this.isLoggedInSubject.next(true);
-        }),
-        map(() => {})
-      );
+  login(LoginRequest: { username: string; password: string }) {
+    this.axiosService
+      .post('/auth/authenticate', LoginRequest)
+      .then((response: any) => {
+        localStorage.setItem(
+          'fullname',
+          response.data.firstname + ' ' + response.data.lastName
+        );
+        this.tokenStorage.saveToken(response.data.jwttoken);
+        this.isLoggedInSubject.next(true);
+        this.router.navigate(['']);
+      })
+      .catch((error: any) => {
+        console.error('Error fetching user details:', error);
+      });
   }
 
   logout(): void {
     this.tokenStorage.clearToken();
     this.isLoggedInSubject.next(false);
+    this.router.navigate(['/login']);
   }
 
   hasValidToken(): boolean {
