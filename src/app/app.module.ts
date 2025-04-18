@@ -6,9 +6,7 @@ import { MainLayoutModule } from './shared/components/main-layout/main-layout.mo
 import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { AuthInterceptor } from './core/interceptors/auth.interceptor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ErrorModalComponent } from './shared/components/error-modal/error-modal.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,11 +25,7 @@ import { ErrorModalComponent } from './shared/components/error-modal/error-modal
       }
     })
   ],
-  providers: [{
-    provide: HTTP_INTERCEPTORS,
-    useClass: AuthInterceptor,
-    multi: true
-  }],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

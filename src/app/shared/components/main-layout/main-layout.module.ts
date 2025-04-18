@@ -19,9 +19,9 @@ import { ErrorModalComponent } from '../error-modal/error-modal.component';
     FooterComponent,
     MainLayoutComponent,
     NavMenuComponent,
-    ErrorModalComponent,
     HomeComponent,
-    LoadingSpinnerComponent
+    LoadingSpinnerComponent,
+    ErrorModalComponent
   ],
   imports: [
     AuthenticationModule,

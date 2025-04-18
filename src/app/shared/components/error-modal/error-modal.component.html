@@ -1,8 +1,14 @@
-<div class="error-backdrop" *ngIf="visible">
-    <div class="error-modal">
-      <h2>Error</h2>
+<div *ngIf="isVisible" class="modal-backdrop">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2>{{ title }}</h2>
+      <button (click)="closeModal()" class="close-btn">&times;</button>
+    </div>
+    <div class="modal-body">
       <p>{{ message }}</p>
-      <button (click)="onClose()">Close</button>
+    </div>
+    <div class="modal-footer">
+      <button (click)="closeModal()" class="btn-primary">Close</button>
     </div>
   </div>
-  
+</div>

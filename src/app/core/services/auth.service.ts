@@ -6,6 +6,7 @@ import { TokenPayload } from './../models/TokenPayload';
 import { Router } from '@angular/router';
 import { AxiosService } from './axios.service';
 import { environment } from 'src/environments/environment';
+import { ErrorModalService } from './error-modal.service';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
@@ -19,22 +20,37 @@ export class AuthService {
   constructor(
     private tokenStorage: TokenStorageService,
     private router: Router,
-    private axiosService: AxiosService
+    private axiosService: AxiosService,
+    private errorModalService: ErrorModalService
   ) {}
 
   login(LoginRequest: { username: string; password: string }) {
     this.axiosService
-      .post('/auth/authenticate', LoginRequest)
+      .post<any>('/auth/authenticate', LoginRequest)
       .then((response: any) => {
-        localStorage.setItem(
-          'fullname',
-          response.data.firstname + ' ' + response.data.lastName
-        );
-        this.tokenStorage.saveToken(response.data.jwttoken);
-        this.isLoggedInSubject.next(true);
-        this.router.navigate(['']);
+        console.log(response);
+        
+        if (response.statusCode == 200) {
+          localStorage.setItem(
+            'fullname',
+            response.data.firstname + ' ' + response.data.lastName
+          );
+          this.tokenStorage.saveToken(response.data.jwttoken);
+          this.isLoggedInSubject.next(true);
+          this.router.navigate(['']);
+          
+        }else{
+          this.errorModalService.showModal(
+            response.message || 'erreur d\'authentification !',
+            'Auth'
+          );
+        }
       })
       .catch((error: any) => {
+        this.errorModalService.showModal(
+          error.message || 'An error occurred while fetching data',
+          'API Error'
+        );
         console.error('Error fetching user details:', error);
       });
   }
