@@ -21,7 +21,6 @@ export class AxiosService {
     // Create Axios instance
     this.axiosInstance = axios.create({
       baseURL: environment.apiUrl,
-      timeout: 10000,
       headers: {
         'Content-Type': 'application/json',
       },
@@ -36,9 +35,9 @@ export class AxiosService {
 
         // Add token to request headers
         const token = this.tokenStorage.getToken();
+        config.headers['Accept-language'] = localStorage.getItem('language');
         if (token) {
           config.headers['Authorization'] = `Bearer ${token}`;
-          config.headers['Accept-language'] = localStorage.getItem('language');
         }
 
         return config;

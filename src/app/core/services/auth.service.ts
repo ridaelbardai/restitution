@@ -6,6 +6,8 @@ import { TokenPayload } from './../models/TokenPayload';
 import { Router } from '@angular/router';
 import { AxiosService } from './axios.service';
 import { environment } from 'src/environments/environment';
+import { TranslateService } from '@ngx-translate/core';
+import { swalUtil } from '../utilities/swal';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
@@ -19,23 +21,36 @@ export class AuthService {
   constructor(
     private tokenStorage: TokenStorageService,
     private router: Router,
-    private axiosService: AxiosService
+    private axiosService: AxiosService,
+    private translate: TranslateService
   ) {}
 
   login(LoginRequest: { username: string; password: string }) {
     this.axiosService
       .post('/auth/authenticate', LoginRequest)
       .then((response: any) => {
-        localStorage.setItem(
-          'fullname',
-          response.data.firstname + ' ' + response.data.lastName
-        );
-        this.tokenStorage.saveToken(response.data.jwttoken);
-        this.isLoggedInSubject.next(true);
-        this.router.navigate(['']);
+        if (response.statusCode == 200) {
+          localStorage.setItem(
+            'fullname',
+            response.data.firstname + ' ' + response.data.lastName
+          );
+          this.tokenStorage.saveToken(response.data.jwttoken);
+          this.isLoggedInSubject.next(true);
+          this.router.navigate(['']);
+        } else {
+          swalUtil.error(
+            this.translate.instant('swal.error'),
+            response.message,
+            this.translate.instant('swal.ok')
+          );
+        }
       })
       .catch((error: any) => {
-        console.error('Error fetching user details:', error);
+        swalUtil.error(
+          this.translate.instant('swal.error'),
+          error,
+          this.translate.instant('swal.ok')
+        );
       });
   }
 

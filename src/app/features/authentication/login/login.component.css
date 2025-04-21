@@ -87,3 +87,6 @@ button:hover{
 .login-text-2 {
     font-size: 1.0625rem;
 }
+button strong{
+  text-transform: uppercase;
+}

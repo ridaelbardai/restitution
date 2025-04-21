@@ -61,6 +61,13 @@
     "nom": "Nom",
     "prenom": "Prénom",
     "hasCertificat": "Possède un Certificat"
+  },
+  "swal":{
+    "error":"erreur",
+    "success":"succès",
+    "info":"info",
+    "ok":"Ok"
   }
+
   
 }
