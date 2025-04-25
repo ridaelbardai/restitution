@@ -5,12 +5,7 @@
   <app-loading-spinner></app-loading-spinner>
   <div [@routeAnimations]="prepareRoute(o)">
     <router-outlet #o="outlet"></router-outlet>
-    <app-error-modal
-      [visible]="errorVisible"
-      [message]="errorMessage"
-      [onClose]="closeErrorModal"
-    >
-    </app-error-modal>
+    
   </div>
 </div>
 <app-footer></app-footer>

@@ -9,8 +9,6 @@ import { TranslateModule } from '@ngx-translate/core';
 import { RouterModule } from '@angular/router';
 import { LoadingSpinnerComponent } from '../loading-spinner/loading-spinner.component';
 import { HomeComponent } from 'src/app/features/home/home.component';
-import { AuthenticationModule } from 'src/app/features/authentication/authentication.module';
-import { ErrorModalComponent } from '../error-modal/error-modal.component';
 
 
 @NgModule({
@@ -19,12 +17,10 @@ import { ErrorModalComponent } from '../error-modal/error-modal.component';
     FooterComponent,
     MainLayoutComponent,
     NavMenuComponent,
-    ErrorModalComponent,
     HomeComponent,
     LoadingSpinnerComponent
   ],
   imports: [
-    AuthenticationModule,
     CommonModule,
     TranslateModule,
     RouterModule

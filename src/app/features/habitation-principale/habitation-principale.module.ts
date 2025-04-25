@@ -2,12 +2,12 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { HabitationPrincipaleRoutingModule } from './habitation-principale-routing.module';
-import { HabitationPrincipaleComponent } from './habitation-principale/habitation-principale.component';
+import { HabitationPrincipalePreFormComponent } from './habitation-principale-pre-form/habitation-principale-pre-form.component';
 
 
 @NgModule({
   declarations: [
-    HabitationPrincipaleComponent
+    HabitationPrincipalePreFormComponent
   ],
   imports: [
     CommonModule,

@@ -5,7 +5,24 @@ import { AuthGuard } from './core/guards/auth.guard';
 import { LoginGuard } from './core/guards/login.guard';
 
 export const routes: Routes = [
-  { path: '', component: HomeComponent, canActivate: [AuthGuard],data: { animation: 'home' } },
-  { path: 'login', component: LoginComponent,canActivate: [LoginGuard] ,data: { animation: 'login' }},
+  {
+    path: '',
+    component: HomeComponent,
+    canActivate: [AuthGuard],
+    data: { animation: 'home' },
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
+    canActivate: [LoginGuard],
+    data: { animation: 'login' },
+  },
+  {
+    path: 'habitation-principale',
+    loadChildren: () =>
+      import(
+        './features/habitation-principale/habitation-principale.module'
+      ).then((m) => m.HabitationPrincipaleModule),
+  },
   { path: '**', redirectTo: '' },
 ];

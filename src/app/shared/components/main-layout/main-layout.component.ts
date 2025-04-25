@@ -30,18 +30,8 @@ export class MainLayoutComponent implements OnInit {
   isLoggedIn: boolean = false;
   private authSub!: Subscription;
 
-  errorVisible = false;
-  errorMessage = '';
+  
 
-  closeErrorModal = () => {
-    this.errorVisible = false;
-    this.errorMessage = '';
-  };
-
-  showError(message: string) {
-    this.errorMessage = message;
-    this.errorVisible = true;
-  }
   
   constructor(private authService: AuthService) {}
   prepareRoute(outlet: RouterOutlet) {

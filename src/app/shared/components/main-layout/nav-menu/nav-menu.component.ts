@@ -14,6 +14,15 @@ export class NavMenuComponent implements OnInit, OnDestroy {
 
   menuOpen = false;
 
+  toggleMenu() {
+    this.menuOpen = !this.menuOpen;
+  }
+
+  closeMenu() {
+    this.menuOpen = false;
+    $('.js-open-menu').removeClass('nav_is_viewed');
+  }
+
   ngOnInit(): void {
     this.menuSubscription = this.menuToggleService.toggleMenu$.subscribe(() => {
       this.toggleMenu();
@@ -75,7 +84,7 @@ export class NavMenuComponent implements OnInit, OnDestroy {
   // Open/Close navigation
   // -------------------------
   private bindNavClick(): void {
-    $(document).on('click', 'nav > ul > li > a', function () {
+    $(document).on('click', 'nav > ul > li ', function () {
       const $parent = $(this).parent();
       $('nav > ul > li').removeClass('opened');
 
@@ -92,7 +101,6 @@ export class NavMenuComponent implements OnInit, OnDestroy {
   // -------------------------
   private bindToggleCta(): void {
     $(document).on('click', "[data-cta*='js-toggle']", function () {
-
       const ctaAttr = $(this).attr('data-cta');
       if (!ctaAttr) return false;
 
@@ -121,19 +129,17 @@ export class NavMenuComponent implements OnInit, OnDestroy {
     this.menuSubscription.unsubscribe();
   }
 
-  toggleMenu() {
-    this.menuOpen = !this.menuOpen;
-  }
-
-  closeMenu() {
-    this.menuOpen = false;
-  }
 
   @HostListener('document:click', ['$event'])
   handleOutsideClick(event: Event) {
     const target = event.target as HTMLElement;
 
     if (this.menuOpen && target.classList.contains('overlay')) {
+      console.log(target.classList);
+      this.closeMenu();
+    }
+
+    if (this.menuOpen && target.classList.contains('link')) {
       console.log(target.classList);
       this.closeMenu();
     }
